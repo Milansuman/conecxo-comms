@@ -30,7 +30,6 @@ wss.on("connection", (ws) => {
         logger_1.logger.info(`Websocket closed due to ${code}: ${reason}`);
         clients = clients.filter(client => client !== ws);
     });
-    ws.send("connected");
 });
 app.post("/incoming", (req, res, next) => {
     console.log(req.body);
