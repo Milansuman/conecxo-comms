@@ -2,6 +2,7 @@ import { logger } from "./logger";
 import twilio from 'twilio';
 import { AccessToken } from 'twilio';
 import { VoiceGrant } from 'twilio/lib/jwt/AccessToken';
+import process from "node:process"
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
