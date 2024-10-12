@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "watch": "tsc --watch",
-    "serve": "dotenv -- nodemon dist/server.js"
+    "serve": "dotenv -e .env.prod -- nodemon dist/server.js",
+    "dev": "dotenv -e .env.local -- nodemon dist/server.js"
   },
   "author": "Milan Suman <milansuman2016@gmail.com>",
   "license": "ISC",
