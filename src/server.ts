@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 
-const server = app.listen(8081, () => console.log("Started listening on localhost:8081"));
+const server = app.listen(8000, () => console.log("Started listening on localhost:8081"));
 const wss = new WebSocketServer({server});
 
 let clients: WebSocket[] = [];
