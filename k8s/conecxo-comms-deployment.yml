@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: conecxo-comms-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: messaging
+  
+  template:
+    metadata:
+      labels:
+        component: messaging
+    spec:
+      containers:
+        - name: conecxo-comms
+          image: conecxo-comms:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8081
