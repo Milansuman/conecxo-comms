@@ -1,7 +1,7 @@
 module.exports = {
   apps : [{
     name: "conecxo-comms",
-    script: 'npm run serve',
-    watch: true
+    script: 'dotenv -e .env.prod -- ./dist/server.js',
+    watch: true,
   }]
 };
