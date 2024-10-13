@@ -14,6 +14,10 @@ const wss = new WebSocketServer({server});
 
 let clients: WebSocket[] = [];
 
+app.get("/ping", (req, res, next) => {
+    res.send("pong");
+})
+
 wss.on("connection", (ws) => {
     clients.push(ws)
     ws.on("error", (err) => logger.error(err));
