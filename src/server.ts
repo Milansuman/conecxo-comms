@@ -20,7 +20,9 @@ app.get("/ping", (req, res, next) => {
 
 wss.on("connection", (ws) => {
     clients.push(ws)
-    ws.on("error", (err) => logger.error(err));
+    ws.on("error", (err) => {
+        console.error(err)
+    });
 
     ws.on("message", (data, isBinary) => {
         try {
@@ -29,6 +31,7 @@ wss.on("connection", (ws) => {
             sendWhatsappMessage(message.phone, message.contents);
         } catch (error) {
             logger.error(error);
+            console.error(error)
         }
     })
 
