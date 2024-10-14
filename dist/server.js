@@ -10,9 +10,12 @@ const communication_1 = require("./communication");
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-const server = app.listen(8081, () => console.log("Started listening on localhost:8081"));
+const server = app.listen(8000, () => console.log("Started listening on localhost:8000"));
 const wss = new ws_1.WebSocketServer({ server });
 let clients = [];
+app.get("/ping", (req, res, next) => {
+    res.send("pong");
+});
 wss.on("connection", (ws) => {
     clients.push(ws);
     ws.on("error", (err) => logger_1.logger.error(err));

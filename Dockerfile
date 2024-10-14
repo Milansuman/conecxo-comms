@@ -3,8 +3,8 @@ FROM node:22.9.0-bookworm
 COPY . /var/www/conecxo_comms
 WORKDIR /var/www/conecxo_comms
 
-RUN npm install
+RUN npm install && npm run build
 
-ENTRYPOINT ["npm", "run", "serve"]
+ENTRYPOINT ["node", "dist/server.js"]
 
-EXPOSE 8081
+EXPOSE 8000

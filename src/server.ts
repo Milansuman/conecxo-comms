@@ -2,7 +2,7 @@ import express from "express"
 import { WebSocketServer, type WebSocket } from "ws";
 
 import { logger } from "./logger";
-import { sendMessage, sendWhatsappMessage } from "./communication";
+import { sendWhatsappMessage } from "./communication";
 
 const app = express();
 
