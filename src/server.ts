@@ -15,6 +15,7 @@ const wss = new WebSocketServer({server});
 let clients: WebSocket[] = [];
 
 app.get("/ping", (req, res, next) => {
+    console.log("pong");
     res.send("pong");
 })
 
